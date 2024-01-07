@@ -46,12 +46,15 @@ function App() {
 
   function generatPassword() {
     let pass = ''
-    let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    let str = 'abcdefghijklmnopqrstuvwxyz'
     if (number) {
       str += '1234567890'
     }
     if (symbol) {
       str += '/*-+{}[]=_()&^%$#@!~`?><,.;'
+    }
+    if (uperCase) {
+      str += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     }
     for (let i = 0; i < length; i++) {
       let randomNumber = Math.floor(Math.random() * str.length);
@@ -77,7 +80,7 @@ function App() {
         <div className="flex items-center justify-center gap-10 mt-4 md:mt-0">
           <button onClick={copyText} className="relative">
             {copyMessageVisible ? (
-              <p className="font-semibold text-lg"><i class="fa-solid fa-circle-check"></i>
+              <p className="font-medium text-lg"><i class="fa-solid fa-copy"></i>
                 Copied<span className="font-extrabold text-xl">!</span>
               </p>
             ) : (
@@ -105,25 +108,30 @@ function App() {
 
           <div className="flex flex-col md:flex-col mt-4 md:mt-0">
             <div className="mr-6">
+              <input className="mr-2" type="checkbox" id="number" onChange={includeuperCase} />
               <label htmlFor="number" className="text-md font-semibold pb-1">Uppercase</label>
-              <input className="ml-2" type="checkbox" id="number" onChange={includeuperCase} />
             </div>
             <div className="mr-6">
+              <input className="mr-2" type="checkbox" id="number" onChange={includelowerCase} />
               <label htmlFor="number" className="text-md font-semibold pb-1">Lowercase</label>
-              <input className="ml-2" type="checkbox" id="number" onChange={includelowerCase} />
             </div>
             <div className="mr-6">
+              <input className="mr-2" type="checkbox" id="number" onChange={includeNumber} />
               <label htmlFor="number" className="text-md font-semibold pb-1">Number</label>
-              <input className="ml-2" type="checkbox" id="number" onChange={includeNumber} />
             </div>
             <div>
+              <input className="mr-2" type="checkbox" id="symbol" onChange={includeSymbol} />
               <label htmlFor="symbol" className="text-md font-semibold pb-1">Symbols</label>
-              <input className="ml-2" type="checkbox" id="symbol" onChange={includeSymbol} />
             </div>
           </div>
         </div>
       </div>
 
+      {/* footer section */}
+
+      <div class="text-center text-xs w-full sm:w-full sm:bg-[#a3f1f7] sm:text-lg  mx-auto sm:p-4 p-4 font-mono font-medium tracking-tight fixed bottom-0">
+  <p class="developed-text">Developed with love by <span class='text-[#318187] font-sans'>Asad Ullah</span> @2023</p>
+</div>
 
 
     </>
