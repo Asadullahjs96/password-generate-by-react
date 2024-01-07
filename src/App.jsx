@@ -130,8 +130,8 @@ function App() {
       {/* footer section */}
 
       <div class="text-center text-xs w-full sm:w-full sm:bg-[#a3f1f7] sm:text-lg  mx-auto sm:p-4 p-4 font-mono font-medium tracking-tight fixed bottom-0">
-  <p class="developed-text">Developed with love by <span class='text-[#318187] font-sans'>Asad Ullah</span> @2023</p>
-</div>
+        <p class="developed-text">Developed with love by <span class='text-[#318187] font-sans'>Asad Ullah</span> @2023</p>
+      </div>
 
 
     </>
